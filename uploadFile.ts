@@ -28,7 +28,7 @@ attachFile() {
             this.attachedFile = res.object.get('results');
             console.dir(this.attachedFile);
 
-                const filePath = "/storage/emulated/0/Download/test.pdf"; //, this.attachedFile[0].file;
+                const filePath = this.attachedFile[0].file; // "/storage/emulated/0/Download/test.pdf"; 
                 const fileExist = File.exists(filePath);
                 const file = File.fromPath(filePath);
                 const fileReaded = file.readSync((err) => {
@@ -43,3 +43,6 @@ attachFile() {
         });
     }
  }
+
+// ACCESS TO EMULATOR FILE EXPLORER:
+// https://stackoverflow.com/questions/13006315/how-to-access-data-data-folder-in-android-device
